@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -29,5 +30,20 @@ namespace jQueryAjaxCRUDInASPNETCore
                 return sw.GetStringBuilder().ToString();
             }
         }
+
+
+        [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+        public class NoDirectAccessAttribute : ActionFilterAttribute
+        {
+            public override void OnActionExecuting(ActionExecutingContext filterContext)
+            {
+                if (filterContext.HttpContext.Request.GetTypedHeaders().Referer == null ||
+         filterContext.HttpContext.Request.GetTypedHeaders().Host.Host.ToString() != filterContext.HttpContext.Request.GetTypedHeaders().Referer.Host.ToString())
+                {
+                    filterContext.HttpContext.Response.Redirect("/");
+                }
+            }
+        }
+
     }
 }

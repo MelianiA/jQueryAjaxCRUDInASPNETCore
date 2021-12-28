@@ -14,19 +14,11 @@
             <div class="form-group">
                 <label asp-for="AccountNumber" class="control-label"></label>
                 <div class="input-group">
-                    <div class="input-group-prepend">
                         <div class="input-group-text">#</div>
-                    </div>
                     <input asp-for="AccountNumber" class="form-control" />
                 </div>
 
                 <span asp-validation-for="AccountNumber" class="text-danger"></span>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-6">
-                </div>
             </div>
             <div class="form-group">
                 <label asp-for="BeneficiaryName" class="control-label"></label>
@@ -38,7 +30,7 @@
                 <input asp-for="BankName" class="form-control" />
                 <span asp-validation-for="BankName" class="text-danger"></span>
             </div>
-
+            <br /> 
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -51,18 +43,16 @@
                     <div class="form-group">
                         <label asp-for="Amount" class="control-label"></label>
                         <div class="input-group">
-                            <div class="input-group-prepend">
                                 <div class="input-group-text">
                                     <i class="fas fa-dollar-sign"></i>
                                 </div>
-                            </div>
                             <input asp-for="Amount" class="form-control" />
                         </div>
                         <span asp-validation-for="Amount" class="text-danger"></span>
                     </div>
                 </div>
             </div>
-
+            <br /> 
             <div class="form-group">
                 <input type="submit" value="Submit" class="btn btn-primary btn-block" />
             </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using jQueryAjaxCRUDInASPNETCore.Models;
+using static jQueryAjaxCRUDInASPNETCore.Helper;
 
 namespace jQueryAjaxCRUDInASPNETCore.Controllers
 {
@@ -28,6 +29,7 @@ namespace jQueryAjaxCRUDInASPNETCore.Controllers
 
         // GET: Transaction/AddOrEdit
         // GET: Transaction/AddOrEdit/6
+        [NoDirectAccess]
         public async Task<IActionResult> AddOrEdit(int id = 0)
         {
             if (id == 0)
