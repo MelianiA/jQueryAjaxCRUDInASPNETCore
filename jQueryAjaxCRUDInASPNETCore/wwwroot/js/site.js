@@ -26,6 +26,8 @@ showInPopup = (url, title) => {
     })
 }
 
+//jQueryAjaxPost = function (form) {
+//}
 jQueryAjaxPost = form => {
     try {
         $.ajax({
@@ -73,7 +75,6 @@ jQueryAjaxDelete = form => {
                 success: function (res) {
                     $('#view-all').html(res.html);
                     $.notify("Deleted successfully", { globalPosition: 'top center', className: 'success' });
-
                 },
                 error: function (err) {
                     console.log(err);
@@ -87,3 +88,11 @@ jQueryAjaxDelete = form => {
         return false;
     }
 }
+
+
+
+
+// fonction qui s'execute apres le rendu
+$(function () {
+
+});
